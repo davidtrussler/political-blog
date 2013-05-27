@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+
+/* SOUND -- */
+/* EXPERIMENTS -- */
+ul#controls li {
+	clear: left; 
+}
+
+ul#controls li.disabled {
+	opacity: 0.5; 
+}
+
+ul#controls li.start, 
+ul#controls li.stop {
+	float: left; 
+	padding: 0.5em; 
+	border: solid 1px;
+	border-radius: 0.5em; 
+	margin-left: 1em; 
+	clear: none; 
+}
+
+ul#controls li.start {
+	margin-left: 0; 
+	background: green;
+}
+
+ul#controls li.stop {
+	background: red;
+}
+
+ul#controls li.start a, 
+ul#controls li.stop a {
+	font-size: 1.2em; 
+	text-transform: uppercase;  
+	border-bottom: none;
+}
+
+ul#controls li input {
+	padding: 0; 
+	border: none; 
+}
+
+ul#controls li label {
+	font-size: 1em; 
+}
+/* -- EXPERIMENTS */
+
+/* MUSIC -- */
+body.music #tracks .block {
+	margin: 1em 0; 
+}
+
+body.music #tracks .block img {
+	float: right; 
+	margin: 0 0 0 30px; 
+}
+
+body.music #tracks .block audio {
+	width: 30.232% /* 195px */; 
+	margin-top: 1em; 
+}
+
+@media screen and (max-width: 1024px) {
+	body.music #tracks .block audio {
+		width: 47.674% /* 307.5px */; 
+	}
+}
+
+@media screen and (max-width: 600px) {
+	body.music #tracks .block audio {
+		width: 100%; 
+	}
+}
+/* -- MUSIC */
+/* -- SOUND */

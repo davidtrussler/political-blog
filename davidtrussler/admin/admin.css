@@ -1,0 +1,16 @@
+h2, ul.links {
+	float: left; 
+	clear: left; 
+	margin-top: 1em; 
+}
+
+ul.links li {
+	float: left; 
+	padding-right: 1em; 
+	margin-right: 1em; 
+}
+
+#content {
+	clear: left; 
+	padding-bottom: 3.448%
+}
