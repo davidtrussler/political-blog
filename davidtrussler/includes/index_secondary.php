@@ -15,6 +15,8 @@
 		</script>
 	</div>
 
+	<?php 
+	/*
 	<div class="panel">
 		<h5>Latest Tweets</h5>
 
@@ -50,6 +52,8 @@
 			}).render().setUser('davidTrussler').start();
 		</script>
 	</div>
+	*/
+	?>
 
 	<div class="panel last">
 		<h5>Latest Blog Posts</h5>

@@ -25,21 +25,11 @@ $numComments = $weblog->getNumComments($postId);
 echo '<h3>'.html_entity_decode($postTitle).'</h3>'; 
 
 // body
-// echo 'body = '.$body; 
-
-/*
-for ($i = 0; $i < $bodyXml->count(); $i++) {
-	array_push($paras, $bodyXml->para[$i]); 
-}
-
-foreach ($paras as $para) {
-	$postBody .= '<p>'.$para.'</p>'; 
-}
-*/
-
 echo $body; 
 
-// comments - 
+/*
+ * comments - removed until made safe
+ * 
 if ($numComments == 1) {
 	$commentText = 'comment'; 
 } else {
@@ -47,7 +37,11 @@ if ($numComments == 1) {
 }
 
 ?>
+
 	<p><?php echo $numComments; ?>&nbsp;<?php echo $commentText; ?></p>
+*/
+
+?>
 
 	<ul class="connect">
 		<li id="twitter">

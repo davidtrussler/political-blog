@@ -10,8 +10,8 @@ $link_array = array (
 	'home' => 'home', 
 	'web' => 'web', 
 	'sound' => 'sound', 
-	'blog' => 'blog',
-	'contact' => 'contact' 
+	'blog' => 'blog' /* ,
+	'contact' => 'contact' */ 
 ); 
 
 ?>

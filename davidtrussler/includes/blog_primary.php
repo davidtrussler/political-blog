@@ -6,6 +6,9 @@ if (isset($_GET['postId'])) {
 	// display single post
 	include ('includes/post.php'); 
 
+/*
+ * comments removed until made safe --
+ * 
 	$comments = $weblog->getComments($postId); 
 
 	if (count($comments) > 0) {
@@ -180,6 +183,7 @@ if (isset($_GET['postId'])) {
 		</div> <!-- end commentAdd -->
 
 <?php 
+*/
 
 } else {
 	foreach ($posts as $post) {

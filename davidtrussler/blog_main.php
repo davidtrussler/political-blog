@@ -16,8 +16,6 @@ if (isset($_GET['tagNameId'])) {
 	$posts = $weblog->getPosts(); 
 }
 
-// echo 'posts = '.print_r($posts); 
-
 if (isset($_GET['postId']) && $_GET['postId'] != '') {
 	$postId = $_GET['postId']; 
 	$idArray = explode('-', $postId); 
@@ -27,11 +25,7 @@ if (isset($_GET['postId']) && $_GET['postId'] != '') {
 	$postId = $postIdArray[0];  
 }
 
-// echo 'postId = '.$postId; 
-
 $post = $weblog->getPost($postId);
-
-// echo 'post = '.print_r($post); 
 
 if (isset($post['title'])) {
 	$postTitle = htmlspecialchars_decode($post['title']); 
@@ -62,6 +56,9 @@ if (isset($post['body'])) {
 
 $tags = $post['tags']; 
 
+/* 
+ * removed comments until made safe --
+ * 
 $emptyFieldArray = array(); 
 
 $commentAuthor = ''; 
@@ -144,6 +141,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'saveComment') {
 		}
 	}
 }
+*/
 
 $pageTitle = strip_tags($postTitle); 
 
