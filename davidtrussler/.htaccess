@@ -4,8 +4,7 @@ RewriteEngine On
 # RewriteBase /~davidtrussler/davidtrussler/
 
 # remote server
-# RewriteBase /home/futuragr/public_html/davidtrussler
-RewriteBase http://davidtrussler.net
+RewriteBase http://davidtrussler.net/
 
 RewriteRule ^home/?$ index.php
 RewriteRule ^web/?$ portfolio.php 
@@ -14,7 +13,6 @@ RewriteRule ^sound/?$ sound.php
 # RewriteRule ^sound/music/?$ sound.php?section=music 
 # RewriteRule ^sound/([A-Za-z-]+)/?$ sound?section=$1
 RewriteRule ^contact/?$ contact.php 
-
 RewriteRule ^blog/(.*[^/])/?$ blog_main.php?postId=$1
 RewriteRule ^blog/?$ blog_main.php
 

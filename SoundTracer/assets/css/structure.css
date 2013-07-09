@@ -1,0 +1,202 @@
+/*
+ * BEGIN CSS Mobile Reset -- 
+ * based on http://www.vcarrer.com/2010/11/css-mobile-reset.html
+**/
+html, body {
+ margin: 0;
+ padding: 0; 
+ border: 0;
+}
+
+body {
+ /* font-family:Arial,  sans-serif;
+ font-size:16px;
+ line-height:1.5;
+ background: #fff;
+ padding:5px;
+ color: #000;
+ word-wrap: break-word; */
+ -webkit-text-size-adjust: none; /*for iOS on change of orientation */
+}
+
+p, ul, h1, h2, h3, h4 {
+	padding: 0; 
+	margin: 0; 
+	
+}
+
+ul {
+	list-style: none; 
+}
+/* -- END CSS Mobile Reset */
+
+
+/* elements to be cleared -- *
+li.page div.images ul li:after, 
+li.page div.images:after {
+	content: '.';
+	display: block; 
+	clear: both;  
+	visibility: hidden; 
+	height: 0; 
+}
+* -- elements to be cleared */
+
+
+#content {
+	width: 96%; 
+	overflow: hidden;
+	position: relative; 
+	top: 40px; 
+	margin: 0 2%; 
+}
+
+fieldset.sort {
+	position: absolute; 
+	top: 0; 
+	text-align: right;
+	padding: 0;
+	border: none;
+}
+
+ul#pages {
+	clear: both;
+	position: relative; 
+	-webkit-transition-property: left; 
+	-webkit-transition-duration: 0.5s; 
+	-webkit-transition-timing-function: linear; 
+}
+
+ul#pages.orientationChange {
+	-webkit-transition-duration: 0; 
+}
+
+li.page {
+	float: left; 
+	height: 100%; 
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+li.listing {
+	clear: both;
+}
+
+#footer {
+	clear: both; 
+}
+
+
+/* BEGIN image gallery -- */
+li.page div.images {
+	position: relative; 
+	height: 150px; 
+	overflow: hidden; 
+}
+
+li.page div.images ul {
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+}
+
+li.page div.images ul li {
+	float: left;
+	width: 150px; 
+	height: 150px;  
+}
+
+li.page div.images ul li img {
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto; 
+}
+/* -- END image gallery */
+
+
+/* BEGIN loading Message -- */
+#loadMessageContainer {
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	width: 100%; 
+	height: 100%; 
+	text-align: center; 
+	background: gray; 
+}
+
+#loadMessageContainer p {
+	display: inline-block;
+	padding: .25em;
+	font-size: 2em;
+	position: relative;
+	top: 50%;
+	margin-top: -1.125em;
+	border: solid 4px;
+}
+/* -- END loading Message */
+
+
+.listing {
+	margin-bottom: 0.7em;
+	padding-bottom: 0.5em;
+	border-bottom: solid 1px #aaa;
+	clear: both;
+}
+
+.listing div.thumb {
+	width: 10%;
+	float: left;
+}
+
+.listing div.thumb img {
+	width: 100%;
+	position: relative;
+	top: 0.45em;
+}
+
+li.listing ul {
+		position: relative; 
+}
+
+.listing li.type {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	text-align: right;
+}
+
+.listing ul {
+ 	margin-left: 12%; /*make this percentage plus ems */
+}
+ 
+
+#search {
+	position: absolute; 
+	top: 40px;  
+	z-index: 10; 
+ 	width: 100%; 
+ 	background-color: #999;
+}
+ 
+#search.hidden {
+	display: none; 
+}
+
+#search fieldset {
+	 text-align: center;
+}
+ 
+#search li {
+	width: 18%;
+	display: inline-block;
+}
+ 
+ #search button {
+ 	float: right;
+ 	clear: both;
+}
+
+#searchicon::hover {
+	display: block;
+} 
