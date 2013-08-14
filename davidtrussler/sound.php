@@ -8,6 +8,7 @@ if (isset($_GET['section']) && $_GET['section'] == 'experiments') {
 	$title .= ' | music';
 }
 
+include ('constants/environment.php'); 
 require ('includes/commonHeader.php');
 
 ?>
@@ -22,7 +23,7 @@ if (isset($_GET['section']) && $_GET['section'] == 'experiments') {
 
 <ul id="breadcrumbs" class="clear">
 	<li>
-		<a href="sound">back to sound main page</a>
+		<a href="<?php echo $SERVER_ROOT; ?>/sound">back to sound main page</a>
 	</li>
 </ul>
 
@@ -48,11 +49,11 @@ if (isset($_GET['section']) && $_GET['section'] == 'experiments') {
 
 <ul id="breadcrumbs" class="clear">
 	<li>
-		<a href="sound?section=experiments">experiments</a>
+		<a href="<?php echo $SERVER_ROOT; ?>/sound?section=experiments">experiments</a>
 	</li>
 
 	<li>
-		<a href="sound?section=music">music</a>
+		<a href="<?php echo $SERVER_ROOT; ?>/sound?section=music">music</a>
 	</li>
 </ul>
 

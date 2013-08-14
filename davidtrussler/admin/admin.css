@@ -14,3 +14,7 @@ ul.links li {
 	clear: left; 
 	padding-bottom: 3.448%
 }
+
+.comment {
+	border-top: solid 1px; 
+}

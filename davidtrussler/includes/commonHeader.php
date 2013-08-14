@@ -18,6 +18,7 @@ $link_array = array (
 
 <!DOCTYPE html>
 
+<!-- BEGIN commonHeader -->
 <html>
 	<head>
 		<title>david trussler | <?php echo $title; ?></title>
@@ -25,7 +26,7 @@ $link_array = array (
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/javascript" src="<?php echo $root; ?>/js/jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="<?php echo $root; ?>/js/dtPage.js"></script>
-		<link rel="stylesheet" type="text/css" href="<?php echo $root; ?>/dtPage.css"/>
+		<link rel="stylesheet" type="text/css" href="<?php echo $SERVER_ROOT; ?>/css/dtPage.css"/>
 		<link rel="icon" type="image/jpg" href="<?php echo $root; ?>/graphics/favicon.png">
 
 <?php
@@ -40,7 +41,7 @@ if ($pageArray[0] == 'sound') {
 	
 }
 
-include('includes/googleAnalytics.php'); 
+include ($DOC_ROOT.'/includes/googleAnalytics.php'); 
 
 ?>
 
@@ -61,7 +62,7 @@ include('includes/googleAnalytics.php');
 		if (stripos($self, $url_array[0]) != false) {
 			echo '<li class="live">'.$title.'</li>'; 
 		} else {
-			echo '<li><a href="'.$root.'/'.$url.'">'.$title.'</a></li>'; 
+			echo '<li><a href="'.$SERVER_ROOT.'/'.$url.'">'.$title.'</a></li>'; 
 		}
 	}
 
@@ -73,3 +74,4 @@ include('includes/googleAnalytics.php');
 			<div class="end"></div>
 
 			<div id="content" class="clear">
+<!-- END commonHeader -->

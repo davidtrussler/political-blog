@@ -2,10 +2,11 @@
 
 $title = 'edit'; 
 
-include('includes/adminHeader.php'); 
-include('../includes/weblog.php'); 
+include ('../constants/environment.php'); 
+include ('../classes/weblog.php'); 
+include ('includes/adminHeader.php'); 
 
-$weblog = new Weblog('');
+$weblog = new Weblog($DOC_ROOT);
 $allTags = $weblog->getTags(); 
 $tagIdArray = array(); 
 
@@ -158,43 +159,31 @@ if (isset($actionReturn)) {
 	echo '<p>'.$actionReturn.'</p>'; 
 }
 
-?>
-
-<table>
-	<thead>
-		<tr>
-			<th>Date</td>
-			<th>Author</td>
-			<th>Action</td>
-		</tr>
-	</thead>
-
-	<tbody>
-
-<?php
-
 // list comments for this post
 foreach ($commentArray as $comment) {
 
 ?>
 
-		<tr>
-			<td><?php echo $weblog->formatDate($comment['timestamp']); ?></td>
-			<td><?php echo $comment['author']; ?></td>
-			<td>
+		<div class="comment">
+			<p><?php echo $weblog->formatDate($comment['timestamp']); ?></p>
+			<p><?php echo $comment['author']; ?></p>
+			<?php echo $comment['body']; ?>
+			<p>
 				<form action="edit.php" method="post" name="deleteComment">
 					<input type="hidden" name="postId" value="<?php echo $postId; ?>"/>
 					<input type="hidden" name="action" value="deleteComment"/>
 					<input type="hidden" name="commentId" value="<?php echo $comment['commentId'] ?>"/>
 					<button type="submit">Delete comment</button>
 				</form>
-			</td>
-		</tr>
+			</p>
+		</div>
 
 <?php } ?>
 
+<!--  
 	</tbody>
 </table>
+-->
 
 <form action="edit.php" method="post">
 	<input type="hidden" name="postId" value="<?php echo $postId; ?>"/>

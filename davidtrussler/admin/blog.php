@@ -2,10 +2,10 @@
 
 $title = 'blog'; 
 
+include ('../classes/weblog.php'); 
 include ('includes/adminHeader.php'); 
-include('../includes/weblog.php'); 
 
-$weblog = new Weblog('');
+$weblog = new Weblog($DOC_ROOT);
 
 ?>
 

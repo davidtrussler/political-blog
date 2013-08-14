@@ -70,7 +70,7 @@ for ($i = 0; $i < count($postIdArray); $i++) {
 
 ?>
 
-		<li><a href="<?php echo $root; ?>/blog/<?php echo $titleId ?>"><?php echo $title ?></a></li>
+		<li><a href="<?php echo $root.'/blog/'.$titleId.'/'; ?>"><?php echo $title ?></a></li>
 
 <?php
 
