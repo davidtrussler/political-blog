@@ -2,7 +2,15 @@
 
 session_start();
 
-include('../constants/environment.php'); 
+if (isset($_GET['postId'])) {
+	$primaryClass = 'blogPost'; 
+} else {
+	$primaryClass = 'blogMain'; 
+}
+
+$title = 'blog';
+
+include ('../constants/environment.php'); 
 include ('../includes/commonHeader.php');
 include ($DOC_ROOT.'/classes/weblog.php'); 
 include ($DOC_ROOT.'/classes/dateFormatter.php'); 
@@ -18,13 +26,6 @@ if (isset($_GET['tagNameId'])) {
 	$postIdArray = $weblog->getPostIds('', $_GET['month']); 
 } else {
 	$posts = $weblog->getPosts(); 
-}
-
-if (isset($_GET['postId'])) {
-	$primaryClass = 'blogPost'; 
-} else {
-	$title = 'blog';
-	$primaryClass = 'blogMain'; 
 }
 
 echo '<!-- BEGIN blog_main -->'; 
