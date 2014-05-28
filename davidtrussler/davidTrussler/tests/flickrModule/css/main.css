@@ -1,0 +1,197 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0b1 | 201101 
+   NOTE: WORK IN PROGRESS
+   USE WITH CAUTION AND TEST WITH ABANDON */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define visible focus styles! 
+:focus {
+	outline: ?????;
+} */
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* specific styles */
+body {
+	padding: 0.5em 0; 
+}
+
+img {
+	display: block; 
+}
+
+h1 {
+	font-family: baskerville, serif; 
+}
+
+header, 
+article > section, 
+article > section > .images, 
+footer {
+	max-width: 500px; 
+	margin: 0 auto 0.5em; 
+	font-family: helvetica, sans-serif; 
+}
+
+footer {
+	margin-bottom: 0; 
+}
+
+header:after, 
+article > section:after, 
+article > section > .images:after, 
+article > section > ul:after, 
+footer:after {
+	content: '.'; 
+	display: block; 
+	clear: both; 
+	height: 0; 
+	visibility: hidden; 
+}
+
+header {
+	line-height: 3em; 
+}
+
+header h1 {
+	font-size: 3em; 
+	font-weight: bold; 
+	float: left; 
+}
+
+header form {
+	float: right; 
+}
+
+header form legend, 
+header form label {
+	position: absolute; 
+	left: -999em; 
+}
+
+#main {
+	position: relative; 
+	overflow: hidden; 	
+}
+
+#main > ul {
+	position: absolute; 
+	left: 0; 
+}
+
+#main li.image {
+	float: left; 	
+}
+
+#main li.image > div {
+	width: 100%; 
+	height: 0; 
+	padding: 0 0 80%; 
+	background-repeat: no-repeat; 
+	background-position: 50%; 
+	background-color: #000; 
+	background-size: contain; 
+}
+
+#main li.image p.title {
+	margin: 0.5em 0 0; 
+	height: 1em; 
+	width: 100%; 
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+}
+
+#thumbs > ul {
+	clear: both; 
+}
+
+#thumbs > ul > li {
+	float: left; 
+	margin: 0 0 0 0.25em; 
+}
+
+#thumbs > ul > li:first-child {
+	margin-left: 0; 
+}
+
+#thumbs > ul.images > li {
+	margin: 0 0 0.25em 1%; 
+	width: 19.2%; 
+}
+
+#thumbs > ul.images > li:nth-child(1), 
+#thumbs > ul.images > li:nth-child(6), 
+#thumbs > ul.images > li:nth-child(11) {
+	margin-left: 0; 
+}
+
+#thumbs > ul.images > li > img {
+	width: 100%; 
+}
+
+footer p {
+	font-size: 0.8em; 
+	text-align: right; 
+}
+
+/* transitions */
+#main > ul {
+	transition: left; 
+	transition-duration: 1s; 
+}

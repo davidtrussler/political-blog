@@ -1,0 +1,34 @@
+RewriteEngine On
+
+# local server
+RewriteBase /~davidtrussler/davidtrussler/
+
+# remote server
+# RewriteBase http://davidtrussler.net/
+
+# remote server temporary
+# RewriteBase /~futuragr/davidtrussler/
+
+# home
+# RewriteRule ^home/?$ index.php
+RewriteRule ^home/?$ http://www.bbc.co.uk/
+
+# web
+RewriteRule ^web/?$ portfolio.php 
+
+# sound
+RewriteRule ^sound/?$ sound.php 
+# RewriteRule ^sound/music/?$ sound.php?section=music 
+# RewriteRule ^sound/([A-Za-z-]+)/?$ sound?section=$1
+
+# blog
+RewriteRule ^blog/?$ blog/blog_main.php [L]
+RewriteRule ^blog/(.+)/$ blog/blog_main.php?postId=$1
+RewriteRule ^blog/([0-9]+)/(.+[^/])/?$ blog/blog_main.php?postId=$1&$2
+RewriteRule ^blog_comment_save/([0-9]+)/?$ blog/blog_comment_save.php?postId=$1
+
+# contact
+# RewriteRule ^contact/?$ contact.php 
+
+# http://www.addedbytes.com/for-beginners/url-rewriting-for-beginners/
+# www.dracos.co.uk/code/apache-rewrite-problem/
