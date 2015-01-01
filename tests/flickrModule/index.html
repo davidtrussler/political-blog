@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>flickr module</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script type="text/javascript" src="js/flickrModule.Views.js"></script>
+		<script type="text/javascript" src="js/flickrModule.Ajax.js"></script>
+		<script type="text/javascript" src="js/flickrModule.Search.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<h1>Photos</h1>
+			
+			<form name="search">
+				<fieldset>
+					<legend>Search</legend>
+					<div class="field">
+						<label for="searchInput">Search</label>
+						<input type="text" id="searchInput" placeholder="Search"/>
+						<button type="submit">Go</button>
+					</div>
+				</fieldset>
+			</form>
+		</header>
+		
+		<article>
+			<section id="main"></section>
+
+			<section id="thumbs">
+				<ul class="images"></ul>
+				<ul class="pagination"></ul>
+			</section>
+		</article>
+		
+		<footer>
+			<p>David Trussler May 2014</p>
+		</footer>
+	</body>
+</html>

@@ -2,7 +2,7 @@
 
 /* remote server
 $server = 'localhost';
-$user = 'futuragr'; 
+$user = 'futuragr'; // futuragr_futurag';
 $password = '76G.n-mnp';
 $database = 'futuragr_davidtrussler';
 */
@@ -10,7 +10,7 @@ $database = 'futuragr_davidtrussler';
 // local server
 $server = 'localhost';
 $user = 'root';
-$password = '';
+$password = 'skyblue';
 $database = 'davidtrussler';
 
 ?>

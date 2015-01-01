@@ -7,8 +7,8 @@ class Weblog {
 	private $dat;	// database
 	private $mysqli;
 
-	function __construct($DOC_ROOT) {
-		include ($DOC_ROOT.'/blog/blog_login.php'); 
+	function __construct($docRoot) {
+		include ($docRoot.'/blog/blog_login.php'); 
 
 		$this->ser = $server;
 		$this->use = $user;
@@ -630,7 +630,7 @@ class Weblog {
 	}
 
 	function __destruct() {
-		$this->mysqli->close();
+		@ $this->mysqli->close();
 	}
 }
 

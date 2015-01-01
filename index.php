@@ -2,11 +2,11 @@
 
 $title = 'home';
 
-include('constants/environment.php'); 
+include ('constants/environment.php'); 
 include ('classes/weblog.php'); 
 include ('includes/commonHeader.php');
 
-$weblog = new Weblog($DOC_ROOT);
+$weblog = new Weblog($docRoot);
 
 // TODO - get blog posts as object not 2 db requests
 $postIdArray = $weblog->getPostIds('', ''); 

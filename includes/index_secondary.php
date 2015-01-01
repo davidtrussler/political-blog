@@ -1,3 +1,4 @@
+<!-- BEGIN index_secondary -->
 <div id="secondary">
 	<div class="panel">
 		<h5>Follow me on Twitter</h5>
@@ -62,6 +63,8 @@
 
 <?php
 
+// echo $postIdArray; 
+
 for ($i = 0; $i < count($postIdArray); $i++) {
 	$thisPostId = $postIdArray[$i]; 
 	$post = $weblog->getPost($thisPostId);
@@ -70,7 +73,7 @@ for ($i = 0; $i < count($postIdArray); $i++) {
 
 ?>
 
-		<li><a href="<?php echo $root.'/blog/'.$titleId.'/'; ?>"><?php echo $title ?></a></li>
+		<li><a href="<?php echo $localRoot.'/blog/'.$titleId.'/'; ?>"><?php echo $title ?></a></li>
 
 <?php
 
@@ -80,3 +83,4 @@ for ($i = 0; $i < count($postIdArray); $i++) {
 		</ul>
 	</div>
 </div>
+<!-- END index_secondary -->

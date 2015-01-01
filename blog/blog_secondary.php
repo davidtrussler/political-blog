@@ -1,3 +1,4 @@
+<!-- BEGIN blog_secondary -->
 <div id="secondary">
 	<h5>Recent posts</h5>
 
@@ -41,7 +42,7 @@ for ($i = 0; $i < count($posts); $i++) {
 ?>
 
 	<p>
-		<a href="<?php echo $SERVER_ROOT.'/blog/'.$titleId.'/'; ?>">
+		<a href="<?php echo $localRoot.'/blog/'.$titleId.'/'; ?>">
 			<?php echo $title; ?>
 		</a>
 	</p>
@@ -53,4 +54,5 @@ for ($i = 0; $i < count($posts); $i++) {
 
 ?>
 
-</div> <!-- end secondary -->
+</div>
+<!-- END blog_secondary -->

@@ -63,7 +63,7 @@ if (isset($_GET['postId']) && $_GET['postId'] != '') {
 	<h3><?php echo $title; ?></h3>
 	<p>
 		<?php echo $body_trunc; ?>
-		<span><a href="<?php echo $SERVER_ROOT.'/blog/'.$titleId.'/'; ?>">Read more &#8230;</a></span>
+		<span><a href="<?php echo $localRoot.'/blog/'.$titleId.'/'; ?>">Read more &#8230;</a></span>
 	</p>
 
 <?php
