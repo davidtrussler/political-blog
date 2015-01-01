@@ -5,15 +5,15 @@
  * and redirect to blog page for the post
 **/
 
-@session_start();
+@ session_start();
 
 include('../constants/environment.php'); 
-include ($DOC_ROOT.'/classes/sessions.php'); 
-include ($DOC_ROOT.'/classes/weblog.php'); 
+include ($docRoot.'/classes/sessions.php'); 
+include ($docRoot.'/classes/weblog.php'); 
 
 $postId = $_GET['postId']; 
 $sessions = new Sessions();
-$weblog = new Weblog($DOC_ROOT);
+$weblog = new Weblog($docRoot);
 $emptyFieldArray = array(); 
 
 $sessions -> unsetAll(); 
@@ -89,6 +89,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'saveComment') {
 		// $commentTitle = ''; 
 		
 		$commentSaved = 'yes'; 
+
+		// echo $saveComment; 
 	} else {
 		// form is not valid - show errors
 		$saveComment = array(); 
@@ -123,6 +125,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'saveComment') {
 	}
 }
 
-header('location:'.$SERVER_ROOT.'/blog/'.$postId.'/saved='.$commentSaved.'&from=saved#commentAdd');
+// echo $localRoot; 
+
+header('location:'.$localRoot.'/blog/'.$postId.'/saved='.$commentSaved.'&from=saved#commentAdd');
+// header('location:'.$SERVER_ROOT.'/dtNet/blog/blog_main.php?postId='.$postId.'/saved='.$commentSaved.'&from=saved#commentAdd');
 
 ?>

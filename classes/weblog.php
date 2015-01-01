@@ -7,8 +7,8 @@ class Weblog {
 	private $dat;	// database
 	private $mysqli;
 
-	function __construct($docRoot) {
-		include ($docRoot.'/blog/blog_login.php'); 
+	function __construct($DOC_ROOT) {
+		include ($DOC_ROOT.'/blog/blog_login.php'); 
 
 		$this->ser = $server;
 		$this->use = $user;
@@ -196,8 +196,8 @@ class Weblog {
 		 * FREE from: www.TheDemoSite.co.uk
 		**/
 		function is_forbidden($str, $check_all_patterns = true) {
-			echo 'is_forbidden!<br />'; 
-			echo $str.'<br />'; 
+			// echo 'is_forbidden!<br />'; 
+			// echo $str.'<br />'; 
 			
 			$patterns[0] = '/content-type:/';
 			$patterns[1] = '/mime-version/';
@@ -222,7 +222,7 @@ class Weblog {
 				$forbidden = preg_match("/(%0a|%0d|\\n+|\\r+)/i", $str);
 			}
 		
-			echo $forbidden.'<br />'; 
+			// echo $forbidden.'<br />'; 
 			
 			return $forbidden; 
 		}
@@ -630,7 +630,7 @@ class Weblog {
 	}
 
 	function __destruct() {
-		@ $this->mysqli->close();
+		$this->mysqli->close();
 	}
 }
 

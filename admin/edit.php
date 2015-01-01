@@ -6,7 +6,7 @@ include ('../constants/environment.php');
 include ('../classes/weblog.php'); 
 include ('includes/adminHeader.php'); 
 
-$weblog = new Weblog($DOC_ROOT);
+$weblog = new Weblog($docRoot);
 $allTags = $weblog->getTags(); 
 $tagIdArray = array(); 
 

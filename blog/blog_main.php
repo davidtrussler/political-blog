@@ -12,10 +12,10 @@ $title = 'blog';
 
 include ('../constants/environment.php'); 
 include ('../includes/commonHeader.php');
-include ($DOC_ROOT.'/classes/weblog.php'); 
-include ($DOC_ROOT.'/classes/dateFormatter.php'); 
+include ($docRoot.'classes/weblog.php'); 
+include ($docRoot.'classes/dateFormatter.php'); 
 
-$weblog = new Weblog($DOC_ROOT);
+$weblog = new Weblog($docRoot);
 $dateFormatter = new DateFormatter();
 
 // TODO - get blog posts as object not 2 db requests
@@ -31,16 +31,16 @@ if (isset($_GET['tagNameId'])) {
 echo '<!-- BEGIN blog_main -->'; 
 
 if (!isset($_GET['postId'])) {
-	include ($DOC_ROOT.'/blog/blog_intro.php'); 
+	include ($docRoot.'/blog/blog_intro.php'); 
 }
 
-include ($DOC_ROOT.'/blog/blog_primary.php'); 
+include ($docRoot.'/blog/blog_primary.php'); 
 
 if (isset($_GET['postId'])) {
-	include ($DOC_ROOT.'/blog/blog_secondary.php'); 
+	include ($docRoot.'/blog/blog_secondary.php'); 
 }
 
-include ($DOC_ROOT.'/includes/commonFooter.php');
+include ($docRoot.'/includes/commonFooter.php');
 
 ?>
 

@@ -5,7 +5,7 @@ $title = 'blog';
 include ('../classes/weblog.php'); 
 include ('includes/adminHeader.php'); 
 
-$weblog = new Weblog($DOC_ROOT);
+$weblog = new Weblog($docRoot);
 
 ?>
 

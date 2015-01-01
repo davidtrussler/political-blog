@@ -1,13 +1,16 @@
 RewriteEngine On
 
 # local server
-# RewriteBase /~davidtrussler/davidtrussler/
+# RewriteBase /~davidtrussler/dtNet/
+# RewriteBase http://localhost/dtNet/
+# RewriteBase localhost/dtNet/
+RewriteBase /dtNet
 
 # remote server
-# RewriteBase http://davidtrussler.net/
+# RewriteBase http://davidtrussler.net
 
 # remote server temporary
-RewriteBase /~futuragr/davidtrussler/
+# RewriteBase /~futuragr/davidtrussler/
 
 # home
 RewriteRule ^home/?$ index.php
