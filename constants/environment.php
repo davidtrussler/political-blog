@@ -1,11 +1,13 @@
 <?php
 
-if ($SERVER_ROOT == 'http://davidtrussler.net/~futuragr/davidtrussler') {
-	$localRoot = 'http://davidtrussler.net'; 
-	$docRoot = $DOC_ROOT; 
+// echo 'SERVER_NAME: '.$_SERVER['SERVER_NAME']; 
+
+if ($_SERVER['SERVER_NAME'] == 'davidtrussler.net') {
+	$SERVER_ROOT = 'http://davidtrussler.net'; 
+	$DOC_ROOT = '/home/futuragr/public_html/davidtrussler'; 
 } else {
-	$localRoot = 'http://localhost/dtNet/'; 
-	$docRoot = '/Library/WebServer/Documents/dtNet/'; 
+	$SERVER_ROOT = 'http://localhost/dtNet/'; 
+	$DOC_ROOT = '/Library/WebServer/Documents/dtNet/'; 
 }
 
 /*

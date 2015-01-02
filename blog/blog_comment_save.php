@@ -8,12 +8,12 @@
 @ session_start();
 
 include('../constants/environment.php'); 
-include ($docRoot.'/classes/sessions.php'); 
-include ($docRoot.'/classes/weblog.php'); 
+include ($DOC_ROOT.'/classes/sessions.php'); 
+include ($DOC_ROOT.'/classes/weblog.php'); 
 
 $postId = $_GET['postId']; 
 $sessions = new Sessions();
-$weblog = new Weblog($docRoot);
+$weblog = new Weblog($DOC_ROOT);
 $emptyFieldArray = array(); 
 
 $sessions -> unsetAll(); 
@@ -30,6 +30,17 @@ $commentNotify = '';
 
 // comment is being added
 if (isset($_POST['action']) && $_POST['action'] == 'saveComment') {
+	// get user IP
+	if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+		$ip = $_SERVER['HTTP_CLIENT_IP'];
+	} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+		$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	} else {
+		$ip = $_SERVER['REMOTE_ADDR'];
+	}
+
+	// echo 'ip: '.$ip;
+
 	if ($_POST['name'] != '') {
 		$commentAuthor = $_POST['name']; 
 	} else {
@@ -125,9 +136,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'saveComment') {
 	}
 }
 
-// echo $localRoot; 
-
-header('location:'.$localRoot.'/blog/'.$postId.'/saved='.$commentSaved.'&from=saved#commentAdd');
-// header('location:'.$SERVER_ROOT.'/dtNet/blog/blog_main.php?postId='.$postId.'/saved='.$commentSaved.'&from=saved#commentAdd');
+header('location:'.$SERVER_ROOT.'blog/'.$postId.'/saved='.$commentSaved.'&from=saved&ip='.$ip.'#commentAdd');
 
 ?>
