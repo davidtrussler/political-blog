@@ -42,7 +42,7 @@ for ($i = 0; $i < count($posts); $i++) {
 ?>
 
 	<p>
-		<a href="<?php echo $localRoot.'/blog/'.$titleId.'/'; ?>">
+		<a href="<?php echo $SERVER_ROOT.'blog/'.$titleId.'/'; ?>">
 			<?php echo $title; ?>
 		</a>
 	</p>
