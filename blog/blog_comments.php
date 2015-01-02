@@ -148,7 +148,7 @@ if (isset($_SESSION['saveComment'])) {
 
 ?>
 
-		<form action="<?php echo $localRoot; ?>/blog_comment_save/<?php echo $postId; ?>" method="post">
+		<form action="<?php echo $SERVER_ROOT; ?>/blog_comment_save/<?php echo $postId; ?>" method="post">
 			<input type="hidden" name="action" value="saveComment"/>
 	
 			<fieldset>

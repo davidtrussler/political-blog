@@ -2,7 +2,7 @@
 
 @session_start();
 
-include ($docRoot.'/classes/sessions.php'); 
+include ($DOC_ROOT.'/classes/sessions.php'); 
 
 $sessions = new Sessions();
 $postClass = ''; 
