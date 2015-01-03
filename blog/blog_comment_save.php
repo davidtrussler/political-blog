@@ -91,7 +91,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'saveComment') {
 			$commentNotify = 'false'; 
 		}
 
-		$saveComment = $weblog->saveComment($commentAuthor, $commentEmail, $commentWebsite, $postId, $commentBody, $commentTitle, $commentNotify); 
+		$saveComment = $weblog->saveComment($commentAuthor, $commentEmail, $commentWebsite, $postId, $commentBody, $commentTitle, $commentNotify, $ip); 
 
 		$commentAuthor = ''; 
 		$commentEmail = ''; 
@@ -136,6 +136,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'saveComment') {
 	}
 }
 
-header('location:'.$SERVER_ROOT.'blog/'.$postId.'/saved='.$commentSaved.'&from=saved&ip='.$ip.'#commentAdd');
+header('location:'.$SERVER_ROOT.'/blog/'.$postId.'/saved='.$commentSaved.'&from=saved#commentAdd');
 
 ?>

@@ -180,7 +180,7 @@ class Weblog {
 	}
 
 	// saves a comment
-	public function saveComment($author, $email, $website, $postId, $body, $title, $notify) {
+	public function saveComment($author, $email, $website, $postId, $body, $title, $notify, $ip) {
 		$author = $this->format($author, '', 'put'); 
 		$email = $this->format($email, '', 'put'); 
 		$title = $this->format($title, '', 'put'); 
@@ -249,7 +249,7 @@ class Weblog {
 			return 'Error: could not connect to database!'; 
 			exit(); 
 		} else {
-			$query = "INSERT INTO blog_comments VALUES(NULL, NULL, '$author', '$email', '$website', $postId, '$body', '$title', '$notify')"; 
+			$query = "INSERT INTO blog_comments VALUES(NULL, NULL, '$author', '$email', '$website', $postId, '$body', '$title', '$notify', '$ip')"; 
 			$result = $this->mysqli->query($query); 
 
 			if (!$result) {
