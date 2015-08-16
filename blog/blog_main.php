@@ -12,8 +12,8 @@ $title = 'blog';
 
 include ('../constants/environment.php'); 
 include ('../includes/commonHeader.php');
-include ($DOC_ROOT.'classes/weblog.php'); 
-include ($DOC_ROOT.'classes/dateFormatter.php'); 
+include ($DOC_ROOT.'/classes/weblog.php'); 
+include ($DOC_ROOT.'/classes/dateFormatter.php'); 
 
 $weblog = new Weblog($DOC_ROOT);
 $dateFormatter = new DateFormatter();

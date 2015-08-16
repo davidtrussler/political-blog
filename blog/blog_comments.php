@@ -118,9 +118,12 @@ if (count($comments) > 0) {
 if (isset($_GET['saved']) && $_GET['saved'] == 'no') {
 	echo '<div id="commentAdd">'; 
 } else {
-	echo '<div>'; 
+	echo 
+		'<div>
+			<h4>Adding comments is temporarily disabled.</h4>'; 
 }
 
+/*
 ?>
 
 		<h4>Add a comment</h4>
@@ -255,6 +258,9 @@ if (isset($validCaptcha) && $validCaptcha == 'invalid') {
 				</div>
 			</fieldset>
 		</form>
+*/
+?>
+
 	</div> <!-- end commentAdd -->
 </div>
 <!-- END blog_comments -->
