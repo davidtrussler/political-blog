@@ -165,9 +165,10 @@ foreach ($commentArray as $comment) {
 ?>
 
 		<div class="comment">
-			<p><?php echo $weblog->formatDate($comment['timestamp']); ?></p>
-			<p><?php echo $comment['author']; ?></p>
-			<?php echo $comment['body']; ?>
+			<p>Date posted: <?php echo $weblog->formatDate($comment['timestamp']); ?></p>
+			<p>IP Address: <?php echo $comment['ipAddress']; ?></p>
+			<p>Author: <?php echo $comment['author']; ?></p>
+			<p><?php echo $comment['body']; ?></p>
 			<p>
 				<form action="edit.php" method="post" name="deleteComment">
 					<input type="hidden" name="postId" value="<?php echo $postId; ?>"/>

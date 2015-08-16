@@ -34,7 +34,7 @@ if (isset($_POST['action'])) {
 	$body = str_replace("</p>", "</p>\n", $body); 
 
 	// strip tags
-	$body = strip_tags($body, '<a><span>'); 
+	$body = strip_tags($body, '<h1><h2><h3><h4><h5><ol><ul><li><a><span>'); 
 
 	while (stripos($body, "\n\n") !== false) {
 		$body = str_replace("\n\n", "\n", $body); 
