@@ -6,6 +6,9 @@ $page = array_pop($selfArray);
 $root = join('/', $selfArray).'/'; 
 $pageArray = explode('.', $page); 
 
+// set the timezone for date-based calculations
+date_default_timezone_set('Europe/London'); 
+
 /*
 if ($SERVER_ROOT == 'http://davidtrussler.net/~futuragr/davidtrussler') {
 	$localRoot = 'http://davidtrussler.net'; 

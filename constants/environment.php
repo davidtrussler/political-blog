@@ -10,6 +10,8 @@ if ($_SERVER['SERVER_NAME'] == 'davidtrussler.net') {
 	$DOC_ROOT = '/Library/WebServer/Documents/dtNet/'; 
 }
 
+$COMMENT_EXPIRE = 243; // number of days until comments are disabled
+
 /*
 // local server
 $DOC_ROOT = '/home/davidtrussler/public_html/dtNet'; 
