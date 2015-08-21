@@ -9,27 +9,6 @@ $pageArray = explode('.', $page);
 // set the timezone for date-based calculations
 date_default_timezone_set('Europe/London'); 
 
-/*
-if ($SERVER_ROOT == 'http://davidtrussler.net/~futuragr/davidtrussler') {
-	$localRoot = 'http://davidtrussler.net'; 
-	$docRoot = $DOC_ROOT; 
-} else {
-	$localRoot = 'http://localhost/dtNet/'; 
-	$docRoot = '/Library/WebServer/Documents/dtNet/'; 
-}
-*/
-
-if ($_SERVER['SERVER_NAME'] == 'davidtrussler.net') {
-	$SERVER_ROOT = 'http://davidtrussler.net'; 
-	$DOC_ROOT = '/home/futuragr/public_html/davidtrussler'; 
-} else {
-	$SERVER_ROOT = 'http://localhost/dtNet/'; 
-	$DOC_ROOT = '/Library/WebServer/Documents/dtNet/'; 
-}
-
-// echo 'self = '.$self; 
-// echo 'SERVER_ROOT = '.$SERVER_ROOT; 
-
 $link_array = array (
 	'home' => 'home', 
 	'web' => 'web', 
