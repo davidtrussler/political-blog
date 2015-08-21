@@ -7,11 +7,13 @@ if (isset($_GET['postId']) && $_GET['postId'] != '') {
 	$postId = $_GET['postId']; 
 	$idArray = explode('-', $postId); 
 	$postId = array_pop($idArray); 
-		
-	// echo 'postId = '.$_GET['postId']; 
-	
 	$post = $weblog->getPost($postId);
-	
+
+	// calculate age of post
+	$postDate = new DateTime($post['timestamp']);
+	$now = new DateTime();
+	$postAge = $postDate->diff($now)->format('%a'); // in days
+
 	if (isset($post['title'])) {
 		$postTitle = htmlspecialchars_decode($post['title']); 
 	} else {

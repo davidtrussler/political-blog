@@ -115,20 +115,18 @@ if (count($comments) > 0) {
 
 <?php 
 
-/*
-if (isset($_GET['saved']) && $_GET['saved'] == 'no') {
-	echo '<div id="commentAdd">'; 
-} else {
+// only show comments if the post is less than a defined age.
+if ($postAge > $COMMENT_EXPIRE) {
 	echo 
 		'<div>
-			<h4>Adding comments is temporarily disabled.</h4>'; 
-}
-*/
+			<h4>Adding comments has now expired for this post.</h4>
+		</div>'; 
+} else {
+	echo '<div id="commentAdd">'; 
 
 ?>
 
-	<div>
-		<h4>Add a comment</h4>
+	<h4>Add a comment</h4>
 
 <?php
 
@@ -261,5 +259,12 @@ if (isset($validCaptcha) && $validCaptcha == 'invalid') {
 			</fieldset>
 		</form>
 	</div> <!-- end commentAdd -->
+
+<?php
+
+}
+
+?>
+
 </div>
 <!-- END blog_comments -->
