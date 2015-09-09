@@ -11,10 +11,7 @@ date_default_timezone_set('Europe/London');
 
 $link_array = array (
 	'home' => 'home', 
-	'web' => 'web', 
-	'sound' => 'sound', 
-	'blog' => 'blog' /* ,
-	'contact' => 'contact' */ 
+	'blog' => 'blog'
 ); 
 
 ?>
@@ -35,16 +32,6 @@ $link_array = array (
 		<link rel="icon" type="image/jpg" href="<?php echo $root; ?>graphics/favicon.png">
 
 <?php
-
-if ($pageArray[0] == 'sound') {
-	
-?>
-
-		<link rel="stylesheet" type="text/css" href="<?php echo $root; ?>/soundPage.css"/>
-
-<?php 
-	
-}
 
 include ($DOC_ROOT.'/includes/googleAnalytics.php'); 
 
