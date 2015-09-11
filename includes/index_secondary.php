@@ -16,54 +16,12 @@
 		</script>
 	</div>
 
-	<?php 
-	/*
-	<div class="panel">
-		<h5>Latest Tweets</h5>
-
-		<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-
-		<script>
-			new TWTR.Widget({
-				version: 2,
-				type: 'profile',
-				rpp: 3,
-				interval: 30000,
-				width: 'auto',
-				height: 'auto',
-				theme: {
-					shell: {
-					background: '',
-					color: ''
-					},
-
-					tweets: {
-					background: '',
-					color: '',
-					links: ''
-					}
-				},
-
-				features: {
-					scrollbar: false,
-					loop: false,
-					live: false,
-					behavior: 'all'
-				}
-			}).render().setUser('davidTrussler').start();
-		</script>
-	</div>
-	*/
-	?>
-
 	<div class="panel last">
 		<h5>Latest Blog Posts</h5>
 
 		<ul>
 
 <?php
-
-// echo $postIdArray; 
 
 for ($i = 0; $i < count($postIdArray); $i++) {
 	$thisPostId = $postIdArray[$i]; 
@@ -73,7 +31,7 @@ for ($i = 0; $i < count($postIdArray); $i++) {
 
 ?>
 
-		<li><a href="<?php echo $localRoot.'/blog/'.$titleId.'/'; ?>"><?php echo $title ?></a></li>
+		<li><a href="<?php echo $SERVER_ROOT.'blog/'.$titleId.'/'; ?>"><?php echo $title ?></a></li>
 
 <?php
 

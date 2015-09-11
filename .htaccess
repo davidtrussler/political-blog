@@ -1,10 +1,7 @@
 RewriteEngine On
 
 # local server
-# RewriteBase /~davidtrussler/dtNet/
-# RewriteBase http://localhost/dtNet/
-# RewriteBase localhost/dtNet/
-RewriteBase /dtNet
+RewriteBase /political-blog
 
 # remote server
 # RewriteBase http://davidtrussler.net
@@ -14,23 +11,13 @@ RewriteBase /dtNet
 
 # home
 RewriteRule ^home/?$ index.php
-
-# web
-RewriteRule ^web/?$ portfolio.php 
-
-# sound
-RewriteRule ^sound/?$ sound.php 
-# RewriteRule ^sound/music/?$ sound.php?section=music 
-# RewriteRule ^sound/([A-Za-z-]+)/?$ sound?section=$1
+# RewriteRule ^index/?$ index.php
 
 # blog
 RewriteRule ^blog/?$ blog/blog_main.php [L]
 RewriteRule ^blog/(.+)/$ blog/blog_main.php?postId=$1
 RewriteRule ^blog/([0-9]+)/(.+[^/])/?$ blog/blog_main.php?postId=$1&$2
 RewriteRule ^blog_comment_save/([0-9]+)/?$ blog/blog_comment_save.php?postId=$1
-
-# contact
-# RewriteRule ^contact/?$ contact.php 
 
 # http://www.addedbytes.com/for-beginners/url-rewriting-for-beginners/
 # www.dracos.co.uk/code/apache-rewrite-problem/
