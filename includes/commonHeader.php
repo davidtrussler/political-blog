@@ -16,8 +16,6 @@ $link_array = array (
 
 ?>
 
-<!DOCTYPE html>
-
 <!-- BEGIN commonHeader -->
 <html>
 	<head>

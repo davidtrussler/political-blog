@@ -2,6 +2,8 @@
 
 session_start();
 
+include ('../includes/doctype.php'); 
+
 if (isset($_GET['postId'])) {
 	$primaryClass = 'blogPost'; 
 } else {

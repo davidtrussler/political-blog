@@ -1,5 +1,7 @@
 <?php
 
+include ('includes/doctype.php'); 
+
 $title = 'home';
 
 include ('constants/environment.php'); 
