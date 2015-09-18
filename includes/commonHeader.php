@@ -42,7 +42,7 @@ include ($DOC_ROOT.'/includes/googleAnalytics.php');
 	<body class="<?php echo $pageArray[0]; ?>">
 		<div id="wrap">
 			<div id="header" class="clear">
-				<h1>david<br />trussler</h1>
+				<h1>political-blog</h1>
 
 				<ul class="nav">
 
@@ -68,8 +68,6 @@ include ($DOC_ROOT.'/includes/googleAnalytics.php');
 
 				</ul>
 			</div>
-
-			<div class="end"></div>
 
 			<div id="content" class="clear">
 <!-- END commonHeader -->

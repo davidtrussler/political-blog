@@ -9,10 +9,12 @@ if (isset($_GET['postId']) && $_GET['postId'] != '') {
 	$postId = array_pop($idArray); 
 	$post = $weblog->getPost($postId);
 
-	// calculate age of post
+	/* calculate age of post
+	 * part of include/exclude comments: may be required in future
 	$postDate = new DateTime($post['timestamp']);
 	$now = new DateTime();
 	$postAge = $postDate->diff($now)->format('%a'); // in days
+	*/
 
 	if (isset($post['title'])) {
 		$postTitle = htmlspecialchars_decode($post['title']); 
