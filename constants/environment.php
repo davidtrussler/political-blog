@@ -1,5 +1,8 @@
 <?php
 
+// set the timezone for date-based calculations
+date_default_timezone_set('Europe/London'); 
+
 /*
  * will need to restore this in future
  * for now have hard-coded the server-root value

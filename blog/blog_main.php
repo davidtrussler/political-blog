@@ -3,6 +3,7 @@
 session_start();
 
 include ('../includes/doctype.php'); 
+include ('../includes/commonVariables.php'); 
 
 if (isset($_GET['postId'])) {
 	$primaryClass = 'blogPost'; 
@@ -13,8 +14,52 @@ if (isset($_GET['postId'])) {
 $title = 'blog';
 
 include ('../constants/environment.php'); 
-include ('../includes/commonHeader.php');
 include ($DOC_ROOT.'/classes/weblog.php'); 
+
+?>
+
+<html>
+
+<?php
+
+include ('../includes/head.php');
+
+?>
+
+	<body class="<?php echo $pageArray[0]; ?>">
+		<div id="wrap">
+			<div id="header" class="clear">
+				<h1>political-blog</h1>
+
+				<ul class="nav">
+
+<?php
+
+// identify if the link is to the current page
+foreach($link_array as $url => $title) {
+	$dest = explode('?', $url)[0]; 
+	$thisPage = array_pop(explode('/', $self));
+
+	if ($dest == 'home') {
+		$dest = 'index'; 
+	}
+
+	if (stripos($thisPage, $dest) !== false) {
+		echo '<li class="live">'.$title.'</li>'; 
+	} else {
+		echo '<li><a href="'.$SERVER_ROOT.$url.'">'.$title.'</a></li>'; 
+	}
+}
+
+?>
+
+				</ul>
+			</div>
+
+			<div id="content" class="clear">
+
+<?php
+
 include ($DOC_ROOT.'/classes/dateFormatter.php'); 
 
 $weblog = new Weblog($DOC_ROOT);
@@ -42,8 +87,16 @@ if (isset($_GET['postId'])) {
 	include ($DOC_ROOT.'/blog/blog_secondary.php'); 
 }
 
+?>
+
+			</div><!-- END #content -->
+
+<?php
+
 include ($DOC_ROOT.'/includes/commonFooter.php');
 
 ?>
 
-<!-- END blog_main -->
+		</div><!-- END #wrap -->
+	</body>
+</html>
