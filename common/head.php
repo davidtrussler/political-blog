@@ -11,7 +11,7 @@
 
 <?php
 
-include ($DOC_ROOT.'/includes/googleAnalytics.php'); 
+include ($DOC_ROOT.'/common/googleAnalytics.php'); 
 
 ?>
 

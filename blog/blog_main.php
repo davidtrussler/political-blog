@@ -2,8 +2,8 @@
 
 session_start();
 
-include ('../includes/doctype.php'); 
-include ('../includes/commonVariables.php'); 
+include ('../common/doctype.php'); 
+include ('../common/variables.php'); 
 
 if (isset($_GET['postId'])) {
 	$primaryClass = 'blogPost'; 
@@ -13,8 +13,8 @@ if (isset($_GET['postId'])) {
 
 $title = 'blog';
 
-include ('../constants/environment.php'); 
-include ($DOC_ROOT.'/classes/weblog.php'); 
+include ('../common/environment.php'); 
+include ('../common/weblog.php'); 
 
 ?>
 
@@ -22,7 +22,7 @@ include ($DOC_ROOT.'/classes/weblog.php');
 
 <?php
 
-include ('../includes/head.php');
+include ('../common/head.php');
 
 ?>
 
@@ -60,7 +60,7 @@ foreach($link_array as $url => $title) {
 
 <?php
 
-include ($DOC_ROOT.'/classes/dateFormatter.php'); 
+include ('../common/dateFormatter.php'); 
 
 $weblog = new Weblog($DOC_ROOT);
 $dateFormatter = new DateFormatter();
@@ -93,7 +93,7 @@ if (isset($_GET['postId'])) {
 
 <?php
 
-include ($DOC_ROOT.'/includes/commonFooter.php');
+include ('../common/footer.php');
 
 ?>
 

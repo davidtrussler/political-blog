@@ -7,9 +7,9 @@
 
 @ session_start();
 
-include ('../constants/environment.php'); 
-include ($DOC_ROOT.'/classes/sessions.php'); 
-include ($DOC_ROOT.'/classes/weblog.php'); 
+include ('../common/environment.php'); 
+include ('../common/sessions.php'); 
+include ('../common/weblog.php'); 
 include ('blog_blockedIPs.php'); 
 
 $postId = $_GET['postId']; 

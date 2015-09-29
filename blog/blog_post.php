@@ -2,7 +2,7 @@
 
 @session_start();
 
-include ($DOC_ROOT.'/classes/sessions.php'); 
+include ('../common/sessions.php'); 
 
 $sessions = new Sessions();
 $postClass = ''; 
@@ -13,10 +13,6 @@ $paras = array();
 if (!isset($_GET['from']) || (isset($_GET['from']) && $_GET['from'] != 'saved')) {
 	$sessions -> unsetAll(); 
 }
-
-// echo 'from = '.$_GET['from'];
-
-// echo 'emptyFieldArray = '.$_SESSION['emptyFieldArray'];
 
 if (isset($numPosts)) {
 	$postId = $postIdArray[$numPosts]; 
