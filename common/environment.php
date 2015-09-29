@@ -15,8 +15,8 @@ if ($_SERVER['SERVER_NAME'] == 'davidtrussler.net') {
 }
 */
 
-$DOC_ROOT = '/Library/WebServer/Documents/political-blog/';
-$SERVER_ROOT = 'http://localhost/political-blog/';
+$DOC_ROOT = '/Library/WebServer/Documents/reason-in-revolt/';
+$SERVER_ROOT = 'http://localhost/reason-in-revolt/';
 
 /* 
  * also will need to be worked on in future - updated to include moderation

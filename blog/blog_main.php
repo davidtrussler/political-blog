@@ -29,7 +29,7 @@ include ('../common/head.php');
 	<body class="<?php echo $pageArray[0]; ?>">
 		<div id="wrap">
 			<div id="header" class="clear">
-				<h1>political-blog</h1>
+				<h1>Reason in revolt</h1>
 
 				<ul class="nav">
 

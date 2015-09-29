@@ -1,7 +1,7 @@
 RewriteEngine On
 
 # local server
-RewriteBase /political-blog
+RewriteBase /reason-in-revolt
 
 # remote server
 # RewriteBase http://davidtrussler.net
