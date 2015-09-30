@@ -31,29 +31,12 @@ include ('../common/head.php');
 			<div id="header" class="clear">
 				<h1>Reason in revolt</h1>
 
-				<ul class="nav">
-
 <?php
 
-// identify if the link is to the current page
-foreach($link_array as $url => $title) {
-	$dest = explode('?', $url)[0]; 
-	$thisPage = array_pop(explode('/', $self));
-
-	if ($dest == 'home') {
-		$dest = 'index'; 
-	}
-
-	if (stripos($thisPage, $dest) !== false) {
-		echo '<li class="live">'.$title.'</li>'; 
-	} else {
-		echo '<li><a href="'.$SERVER_ROOT.$url.'">'.$title.'</a></li>'; 
-	}
-}
+include ('../common/nav.php');
 
 ?>
 
-				</ul>
 			</div>
 
 			<div id="content" class="clear">
