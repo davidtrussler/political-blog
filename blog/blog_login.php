@@ -10,7 +10,7 @@ $database = 'futuragr_davidtrussler';
 // local server
 $server = 'localhost';
 $user = 'root';
-$password = 'skyblue';
-$database = 'davidtrussler';
+$password = '';
+$database = 'reason_in_revolt';
 
 ?>
