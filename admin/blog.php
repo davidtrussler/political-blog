@@ -24,8 +24,6 @@ if (isset($_POST['action'])) {
 	$newTags = $_POST['newTags']; 
 	$body = $_POST['body']; 
 
-	// echo 'body = '.$body; 
-
 	/* format body for database storage -- */
 	while (stripos($body, "\r") !== false) {
 		$body = str_replace("\r", "\n", $body); 
@@ -40,7 +38,11 @@ if (isset($_POST['action'])) {
 		$body = str_replace("\n\n", "\n", $body); 
 	}
 
+	// echo '<br /><br />body = '.$body; 
+
 	$paras = explode("\n", $body); 
+
+	// echo '<br /><br />paras = '; print_r($paras); 
 
 	$bodySave = ''; 
 
@@ -57,11 +59,16 @@ if (isset($_POST['action'])) {
 		$para->appendChild($cdata);
 	}
 
-	$bodySave = $article->saveXML();
-		// $body = addslashes($body); 
-		$bodySave = htmlspecialchars($bodySave, ENT_QUOTES, 'UTF-8', false); 
+	// echo '<br /><br />article = '; print_r($article); 
 
-	// echo 'body = '.$bodySave; 
+	$bodySave = $article->saveXML();
+
+	// echo '<br /><br />bodySave = '.$bodySave;
+
+	// $body = addslashes($body); 
+	$bodySave = htmlspecialchars($bodySave, ENT_QUOTES, 'UTF-8', false); 
+
+	// echo '<br /><br />bodySave = '.$bodySave;
 	/* -- format body for database storage */
 
 	if (isset($_POST['postId'])) {
@@ -77,7 +84,7 @@ if (isset($_POST['action'])) {
 	}
 
 	$postSaved = $weblog->savePost($postId, $title, $bodySave, $tagArray, $newTags); 
-	// echo $postSaved; 
+	// echo 'postSaved: '.$postSaved; 
 }
 
 echo '<ul>'; 

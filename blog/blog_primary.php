@@ -9,6 +9,8 @@ if (isset($_GET['postId']) && $_GET['postId'] != '') {
 	$postId = array_pop($idArray); 
 	$post = $weblog->getPost($postId);
 
+	// print_r($post); 
+
 	/* calculate age of post
 	 * part of include/exclude comments: may be required in future
 	$postDate = new DateTime($post['timestamp']);
