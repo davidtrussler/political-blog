@@ -46,8 +46,9 @@ if (isset($_GET['postId']) && $_GET['postId'] != '') {
 	}
 	
 	$tags = $post['tags']; 
+	$titleId = $post['titleId']; 
 	$pageTitle = strip_tags($postTitle); 
-	
+
 	// display single post
 	include ('blog_post.php'); 
 

@@ -53,32 +53,15 @@ if ($numComments == 1) {
 
 ?>
 
+	<h3>Share this article</h3>
+
 	<ul class="connect">
 		<li id="twitter">
-			<a 
-				href="https://twitter.com/share" 
-				class="twitter-share-button"
-			>Tweet</a>
-
-			<script>
-				!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-			</script>
+		  <a href="https://twitter.com/share?text=<?php echo $postTitle; ?>&amp;url=<?php echo $SERVER_ROOT; ?>/blog/<?php echo $titleId; ?>/" target="_blank">Twitter</a>
 		</li>
 
 		<li id="facebook">
-			<div id="fb-root"></div>
-
-			<script>
-				(function(d, s, id) {
-					var js, fjs = d.getElementsByTagName(s)[0];
-					if (d.getElementById(id)) return;
-					js = d.createElement(s); js.id = id;
-					js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
-					fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));
-			</script>
-
-			<div class="fb-like" data-send="false" data-layout="button_count" data-width="" data-show-faces="false"></div>
+		  <a href="https://www.facebook.com/sharer.php?u=<?php echo $SERVER_ROOT; ?>/blog/<?php echo $titleId; ?>/" target="_blank">Facebook</a>
 		</li>
 	</ul>
 
