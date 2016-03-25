@@ -2,7 +2,7 @@
 
 $title = 'blog'; 
 
-include ('../classes/weblog.php'); 
+include ('../common/weblog.php'); 
 include ('includes/adminHeader.php'); 
 
 $weblog = new Weblog($DOC_ROOT);

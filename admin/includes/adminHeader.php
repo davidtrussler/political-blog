@@ -1,6 +1,6 @@
 <?php
 
-include ('../constants/environment.php'); 
+include ('../common/environment.php'); 
 
 ?>
 

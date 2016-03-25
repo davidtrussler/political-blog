@@ -2,8 +2,8 @@
 
 $title = 'edit'; 
 
-include ('../constants/environment.php'); 
-include ('../classes/weblog.php'); 
+include ('../common/environment.php'); 
+include ('../common/weblog.php'); 
 include ('includes/adminHeader.php'); 
 
 $weblog = new Weblog($DOC_ROOT);
