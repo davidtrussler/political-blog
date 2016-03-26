@@ -7,6 +7,8 @@
 
 @ session_start();
 
+// echo 'blog_comment_save.php'; 
+
 include ('../common/environment.php'); 
 include ('../common/sessions.php'); 
 include ('../common/weblog.php'); 
@@ -31,7 +33,9 @@ $commentNotify = '';
 
 // comment is being added
 if (isset($_POST['action']) && $_POST['action'] == 'saveComment') {
-	// get user IP and check against blocked IPs
+	/* get user IP and check against blocked IPs
+	** this is now disabled - not really working 
+	** though need something to save me from spam commenting!
 	if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 		$ip = $_SERVER['HTTP_CLIENT_IP'];
 	} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -39,11 +43,18 @@ if (isset($_POST['action']) && $_POST['action'] == 'saveComment') {
 	} else {
 		$ip = $_SERVER['REMOTE_ADDR'];
 	}
+	*/
 
+	/*
 	if (in_array($ip, $blockedIps)) {
 		// ip address is blocked
 		$commentSaved = 'no'; 
 	} else {
+	*/
+
+		// placeholder ip address since this is disabled
+		$ip = '1.1.1.1'; 
+
 		// ip address is not blocked
 		if ($_POST['name'] != '') {
 			$commentAuthor = $_POST['name']; 
@@ -97,6 +108,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'saveComment') {
 
 			$saveComment = $weblog->saveComment($commentAuthor, $commentEmail, $commentWebsite, $postId, $commentBody, $commentTitle, $commentNotify, $ip); 
 
+			// echo '<br/><br/>saveComment: '.$saveComment; 
+
 			$commentAuthor = ''; 
 			$commentEmail = ''; 
 			$commentWebsite = ''; 
@@ -104,8 +117,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'saveComment') {
 			// $commentTitle = ''; 
 			
 			$commentSaved = 'yes'; 
-
-			// echo $saveComment; 
 		} else {
 			// form is not valid - show errors
 			$saveComment = array(); 
@@ -138,8 +149,10 @@ if (isset($_POST['action']) && $_POST['action'] == 'saveComment') {
 			
 			$commentSaved = 'no'; 
 		}
-	}
+	// }
 }
+
+// echo '<br/><br/>commentSaved: '.$commentSaved; 
 
 header('location:'.$SERVER_ROOT.'/blog/'.$postId.'/saved='.$commentSaved.'&from=saved#commentAdd');
 
