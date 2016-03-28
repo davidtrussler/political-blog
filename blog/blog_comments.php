@@ -1,7 +1,5 @@
 <!-- BEGIN blog_comments -->
 
-<div id="comments">
-
 <?php
 
 /*
@@ -50,11 +48,11 @@ $comments = $weblog->getComments($postId);
 if (count($comments) > 0) {
 	$i = 0; 
 
-	echo '<div class="comments">
-		<h4>Comments</h4>';
+	echo '<div>
+		<h3>Comments</h3>';
 			
 	if (isset($saveComment)) {
-		echo '<p class="warning">'.$saveComment.'</p>'; 
+		echo '<p>'.$saveComment.'</p>'; 
 	}
 
 	foreach ($comments as $comment) {
@@ -71,31 +69,26 @@ if (count($comments) > 0) {
 		$i++; 
 
 		if (isset($_GET['saved']) && $_GET['saved'] == 'yes' && $i == count($comments)) {
-			echo '<p id="commentAdd" class="message">Your comment was saved.</p>'; 
+			echo '<p>Your comment was saved.</p>'; 
 		}
 		
 ?>
 
-	<div class="comment">
-		<div>
-			<p class="date"><?php echo $date; ?></p>
-		</div> <!-- END date -->
+	<div>
+		<p><?php echo $date; ?></p>
 		
-		<div>
-
 <?php
 
 		if ($website) {
-			echo '<h5><a href="http://'.$website.'">'.$author.'</a></h5>'; 
+			echo '<p><a href="http://'.$website.'">'.$author.'</a></p'; 
 		} else {
-			echo '<h5>'.$author.'</h5>'; 
+			echo '<p>'.$author.'</p>'; 
 		}
 
 ?>
 
-			<p><?php echo $body; ?></p>
-		</div> <!-- END body -->
-	</div><!-- END comment -->
+		<p><?php echo $body; ?></p>
+	</div>
 
 <?php
 
@@ -103,7 +96,7 @@ if (count($comments) > 0) {
 
 ?>
 
-	</div> <!-- end comments -->
+</div>
 
 <?php
 
@@ -119,14 +112,14 @@ if (count($comments) > 0) {
 if ($postAge > $COMMENT_EXPIRE) {
 	echo 
 		'<div>
-			<h4>Adding comments has now expired for this post.</h4>
+			<p>Adding comments has now expired for this post.</p>
 		</div>'; 
 } else {
-	echo '<div id="commentAdd">'; 
+	echo '<div>'; 
 
 ?>
 
-	<h4>Add a comment</h4>
+	<h3>Add a comment</h3>
 
 <?php
 
@@ -155,7 +148,8 @@ if (isset($_SESSION['saveComment'])) {
 			<input type="hidden" name="action" value="saveComment"/>
 	
 			<fieldset>
-				<div class="field clear">
+				<!-- name -->
+				<div>
 
 <?php
 
@@ -173,9 +167,11 @@ if (isset($emptyFieldArray) && in_array('name', $emptyFieldArray)) {
 						id="name"
 						placeholder="name"
 					/>
-				</div> <!-- end name -->
+				</div> 
+				<!-- end name -->
 	
-				<div class="field clear">
+				<!-- email address -->
+				<div>
 
 <?php
 
@@ -195,9 +191,11 @@ if (isset($emptyFieldArray) && in_array('email', $emptyFieldArray)) {
 						id="email"
 						placeholder="email"
 					/>
-				</div> <!-- end email address -->
+				</div> 
+				<!-- end email address -->
 	
-				<div class="field clear">
+				<!-- web address -->
+				<div>
 					<label for="website">Your website address (optional):</label>
 					<input 
 						type="url" 
@@ -206,9 +204,11 @@ if (isset($emptyFieldArray) && in_array('email', $emptyFieldArray)) {
 						id="website"
 						placeholder="website"
 					/>
-				</div> <!-- end web address -->
+				</div> 
+				<!-- end web address -->
 	
-				<div class="field clear">
+				<!-- comment -->
+				<div>
 
 <?php
 
@@ -220,14 +220,18 @@ if (isset($emptyFieldArray) && in_array('comment', $emptyFieldArray)) {
 
 					<label for="comment">Your comment:</label>
 					<textarea name="comment" id="comment"><?php echo $commentBody; ?></textarea>
-				</div> <!-- end warning -->
+				</div>
+				<!-- end comment -->
 	
-				<div class="field notify clear">
+				<!-- notify -->
+				<div>
 					<input id="notify" type="checkbox" name="notify"/>
 					<label for="notify">Tick here to be notified of further comments on this post</label>
-				</div> <!-- end notify -->
+				</div> 
+				<!-- end notify -->
 	
-				<div class="field captcha clear">
+				<!-- captcha -->
+				<div>
 
 <?php
 
@@ -251,20 +255,21 @@ if (isset($validCaptcha) && $validCaptcha == 'invalid') {
 						value=""
 					/>
 					<input type="hidden" name="captcha_validate" value="<?php echo $captcha_validate; ?>"/>
-				</div> <!-- end captcha -->
+				</div> 
+				<!-- end captcha -->
 	
-				<div class="actions">
+				<!-- actions -->
+				<div>
 					<button>Post your comment</button>
 				</div>
+				<!-- end actions -->
 			</fieldset>
 		</form>
-	</div> <!-- end commentAdd -->
+	</div>
 
 <?php
 
 }
 
 ?>
-
-</div>
 <!-- END blog_comments -->

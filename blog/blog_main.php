@@ -1,9 +1,8 @@
-<?php
-
-session_start();
+<?php session_start();
 
 include ('../common/doctype.php'); 
 include ('../common/variables.php'); 
+include ('../common/dateFormatter.php'); 
 
 if (isset($_GET['postId'])) {
 	$primaryClass = 'blogPost'; 
@@ -26,24 +25,16 @@ include ('../common/head.php');
 
 ?>
 
-	<body class="<?php echo $pageArray[0]; ?>">
-		<div id="wrap">
-			<div id="header" class="clear">
-				<h1>Reason in revolt</h1>
+	<body>
+		<div>
 
 <?php
 
-include ('../common/nav.php');
+include ('../common/header.php');
 
 ?>
 
-			</div>
-
-			<div id="content" class="clear">
-
 <?php
-
-include ('../common/dateFormatter.php'); 
 
 $weblog = new Weblog($DOC_ROOT);
 $dateFormatter = new DateFormatter();
@@ -58,13 +49,18 @@ if (isset($_GET['tagNameId'])) {
 	$posts = $weblog->getPosts(); 
 }
 
-echo '<!-- BEGIN blog_main -->'; 
+?>
+
+			<!-- BEGIN main -->
+			<div>
+
+<?php
 
 if (!isset($_GET['postId'])) {
-	include ($DOC_ROOT.'/blog/blog_intro.php'); 
+	include ('blog_intro.php'); 
 }
 
-include ($DOC_ROOT.'/blog/blog_primary.php'); 
+include ('blog_primary.php'); 
 
 if (isset($_GET['postId'])) {
 	include ($DOC_ROOT.'/blog/blog_secondary.php'); 
@@ -72,7 +68,8 @@ if (isset($_GET['postId'])) {
 
 ?>
 
-			</div><!-- END #content -->
+			<!-- END main -->
+			</div>
 
 <?php
 
@@ -80,6 +77,6 @@ include ('../common/footer.php');
 
 ?>
 
-		</div><!-- END #wrap -->
+		</div>
 	</body>
 </html>

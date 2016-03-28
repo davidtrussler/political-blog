@@ -1,6 +1,6 @@
 <!-- BEGIN blog_secondary -->
-<div id="secondary">
-	<h5>Recent posts</h5>
+<div>
+	<h3>Recent posts</h3>
 
 <?php
 
@@ -24,16 +24,17 @@ for ($i = 0; $i < count($posts); $i++) {
 
 ?>
 
-	<p class="date"><?php echo $date ?></p>
+	<div>
+		<p><?php echo $date ?></p>
 
 <?php
 
-	// if ($postId == $postIdArray[$i]) {
-	if ($postId == $thisPostId) {
+		// if ($postId == $postIdArray[$i]) {
+		if ($postId == $thisPostId) {
 
 ?>
 
-	<p><?php echo $title ?></p>
+		<p><?php echo $title ?></p>
 
 <?php
 
@@ -41,15 +42,22 @@ for ($i = 0; $i < count($posts); $i++) {
 
 ?>
 
-	<p>
-		<a href="<?php echo $SERVER_ROOT.'/blog/'.$titleId.'/'; ?>">
-			<?php echo $title; ?>
-		</a>
-	</p>
+		<p>
+			<a href="<?php echo $SERVER_ROOT.'/blog/'.$titleId.'/'; ?>">
+				<?php echo $title; ?>
+			</a>
+		</p>
 
 <?php
 
 	}
+
+?>
+
+	</div>
+
+<?php
+
 }
 
 ?>

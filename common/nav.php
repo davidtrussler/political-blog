@@ -1,4 +1,5 @@
-<ul class="nav">
+<!-- BEGIN nav -->
+<ul>
 
 <?php
 
@@ -21,3 +22,4 @@ foreach($link_array as $url => $title) {
 ?>
 
 </ul>
+<!-- END nav -->

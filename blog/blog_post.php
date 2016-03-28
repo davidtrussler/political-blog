@@ -1,3 +1,4 @@
+<!-- BEGIN blog_post -->
 <?php
 
 @session_start();
@@ -5,7 +6,7 @@
 include ('../common/sessions.php'); 
 
 $sessions = new Sessions();
-$postClass = ''; 
+// $postClass = ''; 
 $postBody = ''; 
 $paras = array(); 
 
@@ -17,22 +18,24 @@ if (!isset($_GET['from']) || (isset($_GET['from']) && $_GET['from'] != 'saved'))
 if (isset($numPosts)) {
 	$postId = $postIdArray[$numPosts]; 
 
+	/*
 	if ($numPosts == count($postIdArray) - 1) {
 		$postClass = ' last'; 
 	}
+	*/
 }
 
 $numComments = $weblog->getNumComments($postId); 
 
 ?>
 
-<div class="post<?php echo $postClass; ?>">
-	<p class="date"><?php echo $date; ?></p>
+<div>
+	<p><?php echo $date; ?></p>
 
 <?php
 
 // title
-echo '<h3>'.html_entity_decode($postTitle).'</h3>'; 
+echo '<h2>'.html_entity_decode($postTitle).'</h2>'; 
 
 // body
 echo $body; 
@@ -53,17 +56,19 @@ if ($numComments == 1) {
 
 ?>
 
-	<h3>Share this article</h3>
+	<div>
+		<h3>Share this article</h3>
 
-	<ul class="connect">
-		<li id="twitter">
-		  <a href="https://twitter.com/share?text=<?php echo $postTitle; ?>&amp;url=<?php echo $SERVER_ROOT; ?>/blog/<?php echo $titleId; ?>/" target="_blank">Twitter</a>
-		</li>
+		<ul>
+			<li>
+			  <a href="https://twitter.com/share?text=<?php echo $postTitle; ?>&amp;url=<?php echo $SERVER_ROOT; ?>/blog/<?php echo $titleId; ?>/" target="_blank">Twitter</a>
+			</li>
 
-		<li id="facebook">
-		  <a href="https://www.facebook.com/sharer.php?u=<?php echo $SERVER_ROOT; ?>/blog/<?php echo $titleId; ?>/" target="_blank">Facebook</a>
-		</li>
-	</ul>
+			<li>
+			  <a href="https://www.facebook.com/sharer.php?u=<?php echo $SERVER_ROOT; ?>/blog/<?php echo $titleId; ?>/" target="_blank">Facebook</a>
+			</li>
+		</ul>
+	</div>
 
 <?php
 /* }
@@ -100,4 +105,5 @@ if (count($postIdArray) > 1) {
 
 ?>
 
-</div> <!-- end post -->
+</div> 
+<!-- END blog_post -->

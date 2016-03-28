@@ -1,5 +1,5 @@
 <!-- BEGIN blog_primary -->
-<div id="primary" class="<?php echo $primaryClass; ?>">
+<div>
 
 <?php
 
@@ -8,8 +8,6 @@ if (isset($_GET['postId']) && $_GET['postId'] != '') {
 	$idArray = explode('-', $postId); 
 	$postId = array_pop($idArray); 
 	$post = $weblog->getPost($postId);
-
-	// print_r($post); 
 
 	/* calculate age of post
 	 * part of include/exclude comments: may be required in future
@@ -66,12 +64,14 @@ if (isset($_GET['postId']) && $_GET['postId'] != '') {
 
 ?>
 
-	<p class="date"><?php echo $date; ?></p>
-	<h3><?php echo $title; ?></h3>
-	<p>
-		<?php echo $body_trunc; ?>
-		<span><a href="<?php echo $SERVER_ROOT.'/blog/'.$titleId.'/'; ?>">Read more &#8230;</a></span>
-	</p>
+	<div>
+		<p class="date"><?php echo $date; ?></p>
+		<h3><?php echo $title; ?></h3>
+		<p>
+			<?php echo $body_trunc; ?>
+			<span><a href="<?php echo $SERVER_ROOT.'/blog/'.$titleId.'/'; ?>">Read more &#8230;</a></span>
+		</p>
+	</div>
 
 <?php
 
