@@ -4,7 +4,7 @@ $title = 'edit';
 
 include ('../common/environment.php'); 
 include ('../common/weblog.php'); 
-include ('includes/adminHeader.php'); 
+include ('common/adminHeader.php'); 
 
 $weblog = new Weblog($DOC_ROOT);
 $allTags = $weblog->getTags(); 
@@ -46,91 +46,97 @@ if (count($tags) >  0) {
 
 ?>
 
-<h3>Post</h3>
+<!-- BEGIN main -->
+<div>
+	<!-- BEGIN post -->
+	<div>	
+		<h3>Post</h3>
 
-<form action="blog.php" method="post">
-	<fieldset>
-		<legend></legend>
-		<p class="fieldsetLabel">Title</p>
+		<form action="blog.php" method="post">
+			<fieldset>
+				<legend></legend>
+				<p class="fieldsetLabel">Title</p>
 
-		<div class="field">
-			<label for="title">Add/edit title of post</label>
-			<!-- <input id="title" type="text" name="title" value="<?php echo $title; ?>"/> -->
-			<textarea id="title" name="title" cols="100" rows="1"><?php echo $title; ?></textarea>
-		</div>
-	</fieldset>
+				<div class="field">
+					<label for="title">Add/edit title of post</label>
+					<!-- <input id="title" type="text" name="title" value="<?php echo $title; ?>"/> -->
+					<textarea id="title" name="title" rows="1"><?php echo $title; ?></textarea>
+				</div>
+			</fieldset>
 
-	<fieldset>
-		<legend></legend>
-		<p class="fieldsetLabel">Body</p>
+			<fieldset>
+				<legend></legend>
+				<p class="fieldsetLabel">Body</p>
 
-		<div class="field">
-			<label for="body">Add/edit body of post</label>
-			<textarea id="body" name="body" cols="100" rows="10" class="wysiwyg"><?php echo $bodyEdit; ?></textarea>
-		</div>
-	</fieldset>
+				<div class="field">
+					<label for="body">Add/edit body of post</label>
+					<textarea id="body" name="body" rows="10" class="wysiwyg"><?php echo $bodyEdit; ?></textarea>
+				</div>
+			</fieldset>
 
-	<fieldset>
-		<legend></legend>
-		<p class="fieldsetLabel">Existing tags</p>
-		<p class="fieldsetLabel">Select/deselect existing tags</p>
+			<fieldset>
+				<legend></legend>
+				<p class="fieldsetLabel">Existing tags</p>
+				<p class="fieldsetLabel">Select/deselect existing tags</p>
 
-<?php 
+	<?php 
 
-foreach ($allTags as $allTagArray) { 
+	foreach ($allTags as $allTagArray) { 
 
-?>
+	?>
 
 		<div class="field checkbox">
 			<label for="tag_<?php echo $allTagArray['tagNameId']; ?>"><?php echo $allTagArray['name']; ?></label>
 			<input id="tag_<?php echo $allTagArray['tagNameId']; ?>" type="checkbox" name="tag[<?php echo $allTagArray['tagNameId']; ?>]"
 
-<?php
+	<?php
 
-if (in_array($allTagArray['tagNameId'], $tagIdArray)) {
-	echo '"checked"'; 
-}
+	if (in_array($allTagArray['tagNameId'], $tagIdArray)) {
+		echo '"checked"'; 
+	}
 
-?>
+	?>
 
-			/>
-		</div>
+				/>
+			</div>
 
-<?php } ?>
+	<?php } ?>
 
-	</fieldset>
+		</fieldset>
 
-	<fieldset>
-		<legend></legend>
-		<p class="fieldsetLabel">New tags</p>
+		<fieldset>
+			<legend></legend>
+			<p class="fieldsetLabel">New tags</p>
 
-		<div class="field">
-			<label for="newTags">Add new tags (comma separated list):</label>
-			<input id="newTags" type="text" name="newTags" value=""/>
-		</div>
-	</fieldset>
+			<div>
+				<label for="newTags">Add new tags (comma separated list):</label>
+				<input id="newTags" type="text" name="newTags" value=""/>
+			</div>
+		</fieldset>
 
-	<fieldset>
-                     
-<?php if ($postId) { ?>
+		<fieldset>
+	                     
+	<?php if ($postId) { ?>
 
-		<div class="field">
-			<input type="hidden" name="postId" value="<?php echo $postId; ?>"/>
-			<input type="hidden" name="action" value="update"/>
-			<button type="submit">Save changes</button>
-		</div>
+				<div>
+					<input type="hidden" name="postId" value="<?php echo $postId; ?>"/>
+					<input type="hidden" name="action" value="update"/>
+					<button type="submit">Save changes</button>
+				</div>
 
-<?php } else { ?>
+	<?php } else { ?>
 
-		<div class="field">
-			<input type="hidden" name="action" value="insert"/>
-			<button type="submit">Add new post</button>
-		</div>
+				<div>
+					<input type="hidden" name="action" value="insert"/>
+					<button type="submit">Add new post</button>
+				</div>
 
-<?php } ?>
+	<?php } ?>
 
-	</fieldset>
-</form>
+			</fieldset>
+		</form>
+	</div>
+	<!-- END post -->
 
 <?php
 
@@ -151,58 +157,59 @@ if ($postId) {
 
 ?>
 
-<h3>Comments</h3>
+	<!-- BEGIN comments -->
+	<div>
+		<h3>Comments</h3>
 
-<?php
+	<?php
 
-if (isset($actionReturn)) {
-	echo '<p>'.$actionReturn.'</p>'; 
-}
+	if (isset($actionReturn)) {
+		echo '<p>'.$actionReturn.'</p>'; 
+	}
 
-// list comments for this post
-foreach ($commentArray as $comment) {
+	// list comments for this post
+	foreach ($commentArray as $comment) {
 
-?>
+	?>
 
-		<div class="comment">
+		<!-- BEGIN comment -->
+		<div>
 			<p>Date posted: <?php echo $weblog->formatDate($comment['timestamp']); ?></p>
 			<p>IP Address: <?php echo $comment['ipAddress']; ?></p>
 			<p>Author: <?php echo $comment['author']; ?></p>
 			<p><?php echo $comment['body']; ?></p>
-			<p>
-				<form action="edit.php" method="post" name="deleteComment">
-					<input type="hidden" name="postId" value="<?php echo $postId; ?>"/>
-					<input type="hidden" name="action" value="deleteComment"/>
-					<input type="hidden" name="commentId" value="<?php echo $comment['commentId'] ?>"/>
-					<button type="submit">Delete comment</button>
-				</form>
-			</p>
+			<form action="edit.php" method="post" name="deleteComment">
+				<input type="hidden" name="postId" value="<?php echo $postId; ?>"/>
+				<input type="hidden" name="action" value="deleteComment"/>
+				<input type="hidden" name="commentId" value="<?php echo $comment['commentId'] ?>"/>
+				<button type="submit">Delete comment</button>
+			</form>
 		</div>
+		<!-- END comment -->
 
 <?php } ?>
 
-<!--  
-	</tbody>
-</table>
--->
+		<form action="edit.php" method="post">
+			<input type="hidden" name="postId" value="<?php echo $postId; ?>"/>
+			<input type="hidden" name="action" value="addComment"/>
 
-<form action="edit.php" method="post">
-	<input type="hidden" name="postId" value="<?php echo $postId; ?>"/>
-	<input type="hidden" name="action" value="addComment"/>
+			<fieldset>
+				<legend>Add a comment</legend>
+				<textarea name="body" rows=5></textarea>
+			</fieldset>
 
-	<fieldset>
-		<legend>Add a comment</legend>
-		<textarea name="body" rows=5 cols=100></textarea>
-	</fieldset>
-
-	<button type="submit">Add comment</button>
-</form>
+			<button type="submit">Add comment</button>
+		</form>
+	</div>
+	<!-- END comments -->
+</div>
+<!-- END main -->
 
 <?php
 
 	}
 }
 
-include('includes/adminFooter.php'); 
+include('common/adminFooter.php'); 
 
 ?>

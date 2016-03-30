@@ -4,11 +4,13 @@ include ('../common/doctype.php');
 include ('../common/variables.php'); 
 include ('../common/dateFormatter.php'); 
 
+/*
 if (isset($_GET['postId'])) {
 	$primaryClass = 'blogPost'; 
 } else {
 	$primaryClass = 'blogMain'; 
 }
+*/
 
 $title = 'blog';
 
@@ -68,8 +70,8 @@ if (isset($_GET['postId'])) {
 
 ?>
 
-			<!-- END main -->
 			</div>
+			<!-- END main -->
 
 <?php
 

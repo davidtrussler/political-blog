@@ -3,7 +3,7 @@
 $title = 'blog'; 
 
 include ('../common/weblog.php'); 
-include ('includes/adminHeader.php'); 
+include ('common/adminHeader.php'); 
 
 $weblog = new Weblog($DOC_ROOT);
 
@@ -121,6 +121,6 @@ echo '</ul>';
 
 <?php
 
-include('includes/adminFooter.php'); 
+include('common/adminFooter.php'); 
 
 ?>

@@ -2,7 +2,7 @@
 
 $title = 'home'; 
 
-include('includes/adminHeader.php'); 
-include('includes/adminFooter.php'); 
+include('common/adminHeader.php'); 
+include('common/adminFooter.php'); 
 
 ?>
