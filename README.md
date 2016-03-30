@@ -1,16 +1,13 @@
-# reason in revolt
+# reason in revolt (initial)
 
-A new blog cloned from the old davidtrussler.net site
+This is the initial stage of a new blog cloned from the old davidtrussler.net site
 
-This is a new site to contain solely blog entries of political writings. 
-
-It was created to separate this aspect of what I do from the more general biographical, music-related and work-based site. 
+It has been created to contain specifically blog entries of political writings, created to separate this aspect of what I do from the more general biographical, music-related and work-based site. 
 
 The title is based on a line from The Internationale. 
 
-The initial (and current) stage of deveopment is to strip back the old site to the absolute basics from which to build the new site. 
-
-Will use following Front End technologies:
+This stage of development strips back the old site to the absolute basics from which to build the new site, whcih will use following Front End technologies:
+- HTML5 (semantic elements)
 - BEM
 - SASS
 - requireJS
